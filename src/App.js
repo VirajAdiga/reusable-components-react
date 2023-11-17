@@ -1,5 +1,6 @@
 import Card from "./components/Card";
-import "./App.css"
+import "bulma/css/bulma.css";
+// import "./App.css"
 
 function App() {
   const data = [
@@ -21,10 +22,16 @@ function App() {
 ]
 
   return (
-    <div className="App">
-      {data.map((card) => (
-        <Card imageUrl={card.imageUrl} heading={card.heading} description={card.description}/>
-      ))}
+    <div className="container">
+      <section className="section">
+        <div className="columns">
+            {data.map((card) => (
+              <div className="column is-4">
+                <Card imageUrl={card.imageUrl} heading={card.heading} description={card.description}/>
+              </div>
+            ))}
+        </div>
+      </section>
     </div>
   );
 }
